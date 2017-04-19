@@ -1,0 +1,41 @@
+{
+  "name": "Argument",
+  "plural": "Arguments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "proInd": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "DebateId": {
+      "type": "string",
+      "required": true
+    },
+    "crteDt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "debateLink": {
+      "type": "belongsTo",
+      "model": "Debate",
+      "foreignKey": "debate"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

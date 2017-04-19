@@ -1,0 +1,56 @@
+{
+  "name": "Debate",
+  "plural": "Debates",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "crteDt": {
+      "type": "date",
+      "required": true
+    },
+    "mdfydDt": {
+      "type": "string",
+      "required": false
+    },
+    "pro_data": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    },
+    "con_data": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "contents": {
+      "type": [
+        "object"
+      ],
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Arguments": {
+      "type": "hasMany",
+      "model": "Argument",
+      "foreignKey": "arguments",
+      "through": "Argument"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
